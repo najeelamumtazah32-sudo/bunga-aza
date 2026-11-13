@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FloraStory - Toko Bunga Impian</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <!-- Google Fonts: Poppins & Playfair Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-2">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <span class="brand-icon">🌸</span>
+        <span class="brand-title">Flora<span>Story</span></span>
+      </a>
+      
+      <!-- Tombol Hamburger Mobile -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <i class="bi bi-list fs-2 text-success"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-2 pt-3 pt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#beranda">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#game-filter">Animasi Bunga</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#katalog">Katalog Bunga</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#kontak">Kontak</a>
+          </li>
+          <li class="nav-item ms-lg-2">
+            <a href="https://wa.me/6281234567890?text=Halo%20FloraStory,%20saya%20ingin%20tanya%20bunga" 
+               target="_blank" class="btn btn-outline-success rounded-pill px-3 py-1 d-inline-flex align-items-center gap-2">
+              <i class="bi bi-whatsapp"></i> Chat Admin
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="beranda" class="hero-section py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <!-- Kolom Teks -->
+        <div class="col-lg-6 text-center text-lg-start">
+          <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill fw-semibold mb-3">
+            🌷 100% Bunga Asli & Berkualitas
+          </span>
+          <h1 class="hero-title display-5 fw-bold mb-3">
+            Hadirkan Keindahan & Kasih Lewat Bunga Pilihan
+          </h1>
+          <p class="hero-desc text-muted mb-4 lead fs-6">
+            Pilih buket romantis, tanaman pot segar, atau bunga tropis yang mekar indah. 
+            Temukan bunga favoritmu!
+          </p>
+          <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+            <a href="#game-filter" class="btn btn-emerald rounded-pill px-4 py-2 fw-semibold shadow-sm">
+              <i class="bi bi-controller me-1"></i> Mainkan Filter Bunga
+            </a>
+            <a href="#katalog" class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
+              Lihat Semua Katalog
+            </a>
+          </div>
+        </div>
+        
+        <!-- Kolom Gambar Hero -->
+        <div class="col-lg-6 text-center">
+          <div class="hero-image-wrapper mx-auto">
+                <img src="rose flower shop 🌹💐🌸.jpe"
+                 alt="Buket Bunga Cantik" class="img-fluid rounded-4 shadow-lg hero-img">
+            <div class="floating-badge shadow p-2 px-3 rounded-pill bg-white">
+              <span class="fs-5 me-1">✨</span> <strong>500+</strong> Pelanggan Puas Hari Ini
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3 FILTER INTERAKTIF (SEPERTI MINI GAME) ================= -->
+  <section id="game-filter" class="game-section py-5">
+    <div class="container">
+      <!-- Judul Bagian Game -->
+      <div class="text-center mb-4">
+        <span class="badge bg-danger-subtle text-danger px-3 py-2 rounded-pill fw-semibold mb-2">
+          🎮 Interactive Feature
+        </span>
+        <h2 class="section-title fw-bold">Animasi Bunga</h2>
+        <p class="text-muted mx-auto" style="max-width: 600px;">
+          Sentuh atau klik 3 tombol di bawah ini!
+        </p>
+      </div>
+
+      <!-- Grid 3 Mini Game Cards -->
+      <div class="row g-3 g-md-4 mb-4">
+        
+        <!-- GAME FILTER 1: MENYIRAM BUNGA -->
+        <div class="col-12 col-md-4">
+          <div class="card game-card h-100 text-center p-3 border-0 shadow-sm" id="game-card-water">
+            <div class="game-stage py-3 position-relative">
+              <!-- Visual Bunga & Efek Air -->
+              <div class="plant-pot mb-2" id="plant-water">
+                <span class="flower-avatar fs-1" id="flower-icon-water">🌱</span>
+                <div class="water-drops" id="water-drops">
+                  <span>💧</span><span>💧</span><span>💧</span>
+                </div>
+              </div>
+              <div class="pot-base fs-3">🪴</div>
+            </div>
+            <div class="card-body p-2">
+              <h5 class="fw-bold mb-1 text-primary">
+                <i class="bi bi-droplet-fill me-1"></i> 1. Siram Bunga
+              </h5>
+              <p class="small text-muted mb-3">
+                Siram tanaman di pot sampai tumbuh mekar menjadi tanaman pot segar!
+              </p>
+              <button class="btn btn-outline-primary btn-game w-100 rounded-pill py-2 fw-semibold" id="btn-water">
+                💦 Siram Tanaman Ini!
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- GAME FILTER 2: MEMETIK BUNGA -->
+        <div class="col-12 col-md-4">
+          <div class="card game-card h-100 text-center p-3 border-0 shadow-sm" id="game-card-pluck">
+            <div class="game-stage py-3 position-relative">
+              <!-- Visual Bunga & Efek Gunting/Petik -->
+              <div class="flower-garden mb-2" id="flower-pluck">
+                <span class="flower-avatar fs-1" id="flower-icon-pluck">🌹</span>
+                <div class="pluck-particles" id="pluck-particles">
+                  <span>✨</span><span>🌸</span><span>✨</span>
+                </div>
+              </div>
+              <div class="ribbon-base fs-3" id="scissors-icon">✂️</div>
+            </div>
+            <div class="card-body p-2">
+              <h5 class="fw-bold mb-1 text-danger">
+                <i class="bi bi-scissors me-1"></i> 2. Petik Bunga
+              </h5>
+              <p class="small text-muted mb-3">
+                Petik tangkai mawar segar untuk dirangkai menjadi buket romantis!
+              </p>
+              <button class="btn btn-outline-danger btn-game w-100 rounded-pill py-2 fw-semibold" id="btn-pluck">
+                ✂️ Petik Jadi Buket!
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- GAME FILTER 3: SINAR MATAHARI -->
+        <div class="col-12 col-md-4">
+          <div class="card game-card h-100 text-center p-3 border-0 shadow-sm" id="game-card-sun">
+            <div class="game-stage py-3 position-relative">
+              <!-- Visual Matahari & Bunga Tropis -->
+              <div class="sun-aura mb-2" id="sun-element">
+                <span class="flower-avatar fs-1" id="flower-icon-sun">🌻</span>
+                <div class="sun-rays" id="sun-rays">
+                  <span>☀️</span>
+                </div>
+              </div>
+              <div class="sun-base fs-3">✨</div>
+            </div>
+            <div class="card-body p-2">
+              <h5 class="fw-bold mb-1 text-warning text-darken">
+                <i class="bi bi-sun-fill me-1"></i> 3. Sinar Matahari
+              </h5>
+              <p class="small text-muted mb-3">
+                Beri pancaran sinar matahari hangat agar bunga tropis merekah cerah!
+              </p>
+              <button class="btn btn-outline-warning btn-game text-dark w-100 rounded-pill py-2 fw-semibold" id="btn-sun">
+                ☀️ Hangatkan Bunga!
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Status Bar Filter Aktif & Tombol Reset -->
+      <div class="filter-status-box bg-white p-3 rounded-4 shadow-sm d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div class="d-flex align-items-center gap-2">
+          <span class="status-indicator-dot"></span>
+          <div>
+            <small class="text-muted d-block">Status Filter Saat Ini:</small>
+            <strong id="active-filter-text" class="text-success fs-6">Menampilkan Semua Bunga (8 Koleksi)</strong>
+          </div>
+        </div>
+        <button class="btn btn-secondary btn-sm rounded-pill px-3 py-2 fw-semibold" id="btn-reset-filter">
+          <i class="bi bi-arrow-counterclockwise me-1"></i> Tampilkan Semua Bunga
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= KATALOG PRODUK BUNGA ================= -->
+  <section id="katalog" class="catalog-section py-5">
+    <div class="container">
+      
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+        <div>
+          <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill fw-semibold mb-2">
+            💐 Koleksi Spesial
+          </span>
+          <h2 class="section-title fw-bold mb-1">Daftar Bunga Pilihan</h2>
+          <p class="text-muted mb-0">Klik pada produk untuk memesan langsung melalui WhatsApp</p>
+        </div>
+      </div>
+
+      <!-- Grid Daftar Produk Bunga -->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4" id="flower-container">
+        
+        <!-- PRODUK 1: POT (Disiram) -->
+        <div class="col flower-item" data-category="pot">
+          <div class="card h-100 product-card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=600&q=80" 
+                   class="card-img-top product-img" alt="Anggrek Ungu Segar">
+              <span class="badge bg-primary position-absolute top-0 start-0 m-3 rounded-pill px-3 py-1">
+                💧 Tanaman Pot
+              </span>
+            </div>
+            <div class="card-body d-flex flex-column p-3">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <small class="text-muted"><i class="bi bi-star-fill text-warning"></i> 4.9 (120 ulasan)</small>
+              </div>
+              <h5 class="card-title fw-bold text-dark fs-6 mb-1">Anggrek Ungu Phalaenopsis</h5>
+              <p class="card-text text-muted small flex-grow-1">Tanaman pot berakar sehat, membutuhkan siraman air teratur.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <span class="price-tag fw-bold text-success fs-6">Rp 175.000</span>
+                <button class="btn btn-sm btn-emerald rounded-pill px-3 py-1 btn-order" 
+                        data-name="Anggrek Ungu Phalaenopsis" data-price="Rp 175.000">
+                  <i class="bi bi-bag-plus me-1"></i> Pesan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUK 2: BUKET (Dipetik) -->
+        <div class="col flower-item" data-category="buket">
+          <div class="card h-100 product-card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=600&q=80" 
+                   class="card-img-top product-img" alt="Buket Mawar Romantis">
+              <span class="badge bg-danger position-absolute top-0 start-0 m-3 rounded-pill px-3 py-1">
+                ✂️ Buket Petik
+              </span>
+            </div>
+            <div class="card-body d-flex flex-column p-3">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <small class="text-muted"><i class="bi bi-star-fill text-warning"></i> 5.0 (250 ulasan)</small>
+              </div>
+              <h5 class="card-title fw-bold text-dark fs-6 mb-1">Buket Mawar Velvet Red</h5>
+              <p class="card-text text-muted small flex-grow-1">12 tangkai mawar merah segar yang baru dipetik dengan pita satin elegan.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <span class="price-tag fw-bold text-success fs-6">Rp 220.000</span>
+                <button class="btn btn-sm btn-emerald rounded-pill px-3 py-1 btn-order" 
+                        data-name="Buket Mawar Velvet Red" data-price="Rp 220.000">
+                  <i class="bi bi-bag-plus me-1"></i> Pesan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUK 3: TROPIS (Sinar Matahari) -->
+        <div class="col flower-item" data-category="tropis">
+          <div class="card h-100 product-card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=600&q=80" 
+                   class="card-img-top product-img" alt="Bunga Matahari Cerah">
+              <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 rounded-pill px-3 py-1">
+                ☀️ Tropis Cerah
+              </span>
+            </div>
+            <div class="card-body d-flex flex-column p-3">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <small class="text-muted"><i class="bi bi-star-fill text-warning"></i> 4.8 (88 ulasan)</small>
+              </div>
+              <h5 class="card-title fw-bold text-dark fs-6 mb-1">Bunga Matahari Golden Sun</h5>
+              <p class="card-text text-muted small flex-grow-1">Bunga yang mekar sempurna saat disinari mentari, simbol keceriaan.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <span class="price-tag fw-bold text-success fs-6">Rp 135.000</span>
+                <button class="btn btn-sm btn-emerald rounded-pill px-3 py-1 btn-order" 
+                        data-name="Bunga Matahari Golden Sun" data-price="Rp 135.000">
+                  <i class="bi bi-bag-plus me-1"></i> Pesan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUK 4: POT (Disiram) -->
+        <div class="col flower-item" data-category="pot">
+          <div class="card h-100 product-card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=600&q=80" 
+                   class="card-img-top product-img" alt="Sukulen Pot Keramik">
+              <span class="badge bg-primary position-absolute top-0 start-0 m-3 rounded-pill px-3 py-1">
+                💧 Tanaman Pot
+              </span>
+            </div>
+            <div class="card-body d-flex flex-column p-3">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <small class="text-muted"><i class="bi bi-star-fill text-warning"></i> 4.7 (75 ulasan)</small>
+              </div>
+              <h5 class="card-title fw-bold text-dark fs-6 mb-1">Mini Sukulen Jade Pot</h5>
+              <p class="card-text text-muted small flex-grow-1">Tanaman meja hias mudah dirawat dengan pot keramik putih minimalis.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <span class="price-tag fw-bold text-success fs-6">Rp 65.000</span>
+                <button class="btn btn-sm btn-emerald rounded-pill px-3 py-1 btn-order" 
+                        data-name="Mini Sukulen Jade Pot" data-price="Rp 65.000">
+                  <i class="bi bi-bag-plus me-1"></i> Pesan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUK 5: BUKET (Dipetik) -->
+        <div class="col flower-item" data-category="buket">
+          <div class="card h-100 product-card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=600&q=80" 
+                   class="card-img-top product-img" alt="Buket Lily Putih">
+              <span class="badge bg-danger position-absolute top-0 start-0 m-3 rounded-pill px-3 py-1">
+                ✂️ Buket Petik
+              </span>
+            </div>
+            <div class="card-body d-flex flex-column p-3">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <small class="text-muted"><i class="bi bi-star-fill text-warning"></i> 4.9 (140 ulasan)</small>
+              </div>
+              <h5 class="card-title fw-bold text-dark fs-6 mb-1">Buket Lily Pure Serenity</h5>
+              <p class="card-text text-muted small flex-grow-1">Kombinasi lily putih wangi dipetik saat kuncup terbaik, cocok untuk wisuda.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <span class="price-tag fw-bold text-success fs-6">Rp 260.000</span>
+                <button class="btn btn-sm btn-emerald rounded-pill px-3 py-1 btn-order" 
+                        data-name="Buket Lily Pure Serenity" data-price="Rp 260.000">
+                  <i class="bi bi-bag-plus me-1"></i> Pesan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUK 6: TROPIS (Sinar Matahari) -->
+        <div class="col flower-item" data-category="tropis">
+          <div class="card h-100 product-card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=600&q=80" 
+                   class="card-img-top product-img" alt="Tanaman Monstera Tropis">
+              <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 rounded-pill px-3 py-1">
+                ☀️ Tropis Cerah
+              </span>
+            </div>
+            <div class="card-body d-flex flex-column p-3">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <small class="text-muted"><i class="bi bi-star-fill text-warning"></i> 5.0 (92 ulasan)</small>
+              </div>
+              <h5 class="card-title fw-bold text-dark fs-6 mb-1">Monstera Deliciosa Exotic</h5>
+              <p class="card-text text-muted small flex-grow-1">Tumbuh subur dengan cahaya alami yang hangat, daun hijau berkilau.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <span class="price-tag fw-bold text-success fs-6">Rp 195.000</span>
+                <button class="btn btn-sm btn-emerald rounded-pill px-3 py-1 btn-order" 
+                        data-name="Monstera Deliciosa Exotic" data-price="Rp 195.000">
+                  <i class="bi bi-bag-plus me-1"></i> Pesan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUK 7: BUKET (Dipetik) -->
+        <div class="col flower-item" data-category="buket">
+          <div class="card h-100 product-card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=600&q=80" 
+                   class="card-img-top product-img" alt="Buket Tulip Warna Warni">
+              <span class="badge bg-danger position-absolute top-0 start-0 m-3 rounded-pill px-3 py-1">
+                ✂️ Buket Petik
+              </span>
+            </div>
+            <div class="card-body d-flex flex-column p-3">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <small class="text-muted"><i class="bi bi-star-fill text-warning"></i> 4.9 (180 ulasan)</small>
+              </div>
+              <h5 class="card-title fw-bold text-dark fs-6 mb-1">Buket Dutch Tulip Pastel</h5>
+              <p class="card-text text-muted small flex-grow-1">Bunga tulip pilihan yang baru dipetik, dibalut kertas craft modern.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <span class="price-tag fw-bold text-success fs-6">Rp 310.000</span>
+                <button class="btn btn-sm btn-emerald rounded-pill px-3 py-1 btn-order" 
+                        data-name="Buket Dutch Tulip Pastel" data-price="Rp 310.000">
+                  <i class="bi bi-bag-plus me-1"></i> Pesan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUK 8: POT (Disiram) -->
+        <div class="col flower-item" data-category="pot">
+          <div class="card h-100 product-card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1512428813834-c702c7702b78?auto=format&fit=crop&w=600&q=80" 
+                   class="card-img-top product-img" alt="Bonsai Pohon Mini">
+              <span class="badge bg-primary position-absolute top-0 start-0 m-3 rounded-pill px-3 py-1">
+                💧 Tanaman Pot
+              </span>
+            </div>
+            <div class="card-body d-flex flex-column p-3">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <small class="text-muted"><i class="bi bi-star-fill text-warning"></i> 4.8 (64 ulasan)</small>
+              </div>
+              <h5 class="card-title fw-bold text-dark fs-6 mb-1">Zen Bonsai Serissa Pot</h5>
+              <p class="card-text text-muted small flex-grow-1">Bonsai berkarakter estetik, butuh siraman air embun untuk daun rimbun.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <span class="price-tag fw-bold text-success fs-6">Rp 280.000</span>
+                <button class="btn btn-sm btn-emerald rounded-pill px-3 py-1 btn-order" 
+                        data-name="Zen Bonsai Serissa Pot" data-price="Rp 280.000">
+                  <i class="bi bi-bag-plus me-1"></i> Pesan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pesan jika produk kosong saat filter (opsional/antisipasi) -->
+      <div id="no-product-alert" class="text-center py-5 d-none">
+        <span class="fs-1">🍃</span>
+        <h5 class="mt-2 text-muted">Tidak ada bunga yang cocok dengan filter ini.</h5>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TENTANG KAMI & KEUNGGULAN ================= -->
+  <section class="py-5 bg-white border-top border-bottom">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3">
+          <div class="p-3">
+            <div class="feature-icon mb-2">🚚</div>
+            <h6 class="fw-bold mb-1">Gratis Kirim</h6>
+            <small class="text-muted">Untuk area dalam kota</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3">
+            <div class="feature-icon mb-2">🌸</div>
+            <h6 class="fw-bold mb-1">Bunga Segar Tiap Hari</h6>
+            <small class="text-muted">Dipetik langsung dari kebun</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3">
+            <div class="feature-icon mb-2">💌</div>
+            <h6 class="fw-bold mb-1">Kartu Ucapan Gratis</h6>
+            <small class="text-muted">Pesan personal estetik</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3">
+            <div class="feature-icon mb-2">⚡</div>
+            <h6 class="fw-bold mb-1">Proses Cepat</h6>
+            <small class="text-muted">Siap kirim dalam 2 jam</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER / KONTAK ================= -->
+  <footer id="kontak" class="footer-section bg-dark text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-5">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="fs-3">🌸</span>
+            <span class="fs-4 fw-bold text-white">Flora<span class="text-success">Story</span></span>
+          </div>
+          <p class="text-white-50 small mb-3" style="max-width: 380px;">
+            FloraStory adalah toko bunga kekinian dengan koleksi buket eksklusif, tanaman pot hias, dan bunga tropis segar untuk setiap perayaan manismu.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle social-btn"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle social-btn"><i class="bi bi-tiktok"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle social-btn"><i class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <h6 class="fw-bold text-white mb-3">Menu Cepat</h6>
+          <ul class="list-unstyled text-white-50 small d-flex flex-column gap-2">
+            <li><a href="#beranda" class="text-white-50 text-decoration-none hover-link">Beranda</a></li>
+            <li><a href="#game-filter" class="text-white-50 text-decoration-none hover-link">Mini Game Filter</a></li>
+            <li><a href="#katalog" class="text-white-50 text-decoration-none hover-link">Katalog Bunga</a></li>
+            <li><a href="#kontak" class="text-white-50 text-decoration-none hover-link">Kontak & Lokasi</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <h6 class="fw-bold text-white mb-3">Kunjungi Toko</h6>
+          <p class="text-white-50 small mb-1"><i class="bi bi-geo-alt-fill text-success me-2"></i> Jl. Melati Harum No. 18, Kebayoran Baru</p>
+          <p class="text-white-50 small mb-1"><i class="bi bi-clock-fill text-success me-2"></i> Buka Setiap Hari: 08:00 - 20:00 WIB</p>
+          <p class="text-white-50 small"><i class="bi bi-whatsapp text-success me-2"></i> 0812-3456-7890</p>
+        </div>
+      </div>
+
+      <hr class="border-secondary my-4">
+      <div class="text-center text-white-50 small">
+        &copy; 2026 FloraStory Florist. Dibuat dengan 💚 untuk pecinta bunga.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL ORDER CEPAT ================= -->
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="orderModalLabel">Konfirmasi Pesanan 🌸</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body py-3">
+          <div class="p-3 bg-light rounded-3 mb-3">
+            <div class="text-muted small">Bunga Dipilih:</div>
+            <strong id="modal-flower-name" class="fs-6 text-dark d-block">Nama Bunga</strong>
+            <div class="text-success fw-bold mt-1" id="modal-flower-price">Rp 0</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold">Nama Pemesan</label>
+            <input type="text" id="buyer-name" class="form-control rounded-pill" placeholder="Masukkan nama Anda...">
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold">Catatan / Kartu Ucapan</label>
+            <textarea id="buyer-note" class="form-control rounded-3" rows="2" placeholder="Contoh: Selamat Ulang Tahun ke-22 tersayang..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn btn-light rounded-pill px-3" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-emerald rounded-pill px-4" id="btn-submit-order">
+            <i class="bi bi-whatsapp me-1"></i> Lanjut ke WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
+
